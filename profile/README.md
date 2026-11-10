@@ -77,11 +77,13 @@ nProtect · ALYac · V3 · Bitdefender · Avast · Kaspersky · McAfee · Window
 | GitHub | 담당 |
 |---|---|
 | [@tortoiese](https://github.com/tortoiese) | APC Injection |
-| [@hackers458](https://github.com/hackers458) | Manual PE Mapper, PebinForge |
+| [@hackers458](https://github.com/hackers458) | Manual PE Mapper, PebinForge, Hollowing Injection, Section Loader, PE-DLL Loader |
 | [@VeryBigsilver](https://github.com/VeryBigsilver) | MBAPacker, AMSI Hooking, IPv4Fuscation |
 | [@endusdksla](https://github.com/endusdksla) | ShellcodeLoader, Ghost Process Injection |
 | [@zickzick2](https://github.com/zickzick2) | In-Memory .NET Assembly Loader |
 | [@laneeeey](https://github.com/laneeeey) | dotnetXorPacker |
+| [@Neo6424](https://github.com/Neo6424) | Process Injection |
+| [@tjzln](https://github.com/tjzln) | |
 
 ---
 
