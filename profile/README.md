@@ -23,41 +23,61 @@ Quasar RAT v1.4.1과 Mimikatz를 대상으로 페이로드 인코딩, 메모리 
 
 ## 레포지토리
 
-### 🛡️ [bypass](https://github.com/VOID-wh4/bypass)
+> 🔒 **실제 PoC 소스코드는 보안상 비공개 레포에 저장되어 있습니다.**  
+> 아래 레포 링크는 접근 권한이 없는 경우 404가 표시될 수 있습니다.  
+> 코드 열람이 필요하신 경우 팀원에게 별도로 문의해 주세요.
+
+---
+
+### 🛡️ bypass
 
 AV/EDR 탐지 우회 기법 구현 모음.  
 프로세스 인젝션, 후킹 우회, PE 로딩, 패킹 등 14개 모듈을 포함합니다.
 
-| 카테고리 | 주요 기법 |
+| 카테고리 | 모듈 |
 |---|---|
-| 프로세스 인젝션 | APC Injection, Process Hollowing, Ghost Injection, Section Loader |
-| 후킹 우회 | ntdll 언훅킹, AMSI Hooking (Detours/Frida) |
+| 프로세스 인젝션 | APC Injection, Process Hollowing, Ghost Injection, Section Loader, Process Injection |
+| 후킹 우회 | ntdll 언훅킹, AMSI Hooking (Detours / Frida) |
 | PE 로딩 | Manual PE Mapper, In-Memory .NET Loader, PE-DLL Loader |
 | 패킹 / 난독화 | MBAPacker, dotnetXorPacker, IPv4Fuscation |
 
-**탐지 결과 (Quasar RAT 기준, 일부)**
+**탐지 결과 — Quasar RAT v1.4.1**
 
-| 기법 | Defender | Bitdefender | Kaspersky | nProtect |
-|---|:---:|:---:|:---:|:---:|
-| APC Injection | X | X | X | O |
-| Manual PE Mapper | O | X | O | O |
-| .NET XOR Packer | O | O | O | O |
-| In-Memory .NET Loader | O | O | O | O |
+`O` 우회 성공 · `X` 탐지 · `▲` 일부 기능 수행 시 탐지
 
-[→ 전체 탐지 결과 및 모듈 설명 보기](https://github.com/VOID-wh4/bypass#전체-탐지-결과-요약)
+| 기법 | nProtect | Alyac | V3 | Bitdefender | Avast | Kaspersky | McAfee | Windows Defender |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| APC Injection | O | O | O | X | O | X | X | X |
+| Manual PE Mapper | O | O | O | X | O | O | O | O |
+| Shellcode Loader | O | O | O | O | O | X | O | O |
+| In-Memory .NET Assembly Loader | O | O | O | O | O | O | X | O |
+| MBAPacker | O | O | X | O | X | X | X | O |
+| Process Injection | O | O | O | X | X | X | O | X |
+| .NET XOR Packer | O | O | O | O | O | O | X | O |
+
+**탐지 결과 — Mimikatz**
+
+| 기법 | nProtect | Alyac | V3 | Bitdefender | Avast | Kaspersky | McAfee | Windows Defender |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Process Hollowing | O | O | O | X | O | X | O | O |
+| Manual PE Mapper | O | O | O | O | O | ▲ | O | O |
+| Section Loader | O | O | O | X | O | X | O | O |
+| Shellcode Loader | O | O | O | O | O | ▲ | O | O |
+| MBAPacker | O | O | O | O | O | ▲ | O | O |
+| PE-DLL Mapping | O | O | O | O | O | ▲ | O | O |
+| Ghost Process Injection | O | O | O | X | O | X | O | O |
+| ntdll Hooking | O | O | O | O | O | O | O | O |
 
 ---
 
-### 🔬 [payload](https://github.com/VOID-wh4/payload)
+### 🔬 payload
 
 페이로드 인코딩·난독화 PoC 모음.  
 바이너리를 IPv4/IPv6/MAC 주소 문자열로 변환하는 HellShell 도구를 포함합니다.
 
 | 프로젝트 | 설명 |
 |---|---|
-| [HellShell](https://github.com/VOID-wh4/payload/tree/main/HellShell) | 바이너리 → IPv4/IPv6/MAC 인코딩 + 독립 복원 C 코드 자동 생성 |
-
-[→ 레포 보기](https://github.com/VOID-wh4/payload)
+| HellShell | 바이너리 → IPv4/IPv6/MAC 인코딩 + 독립 복원 C 코드 자동 생성 |
 
 ---
 
