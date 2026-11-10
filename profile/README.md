@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://avatars.githubusercontent.com/u/311857797?v=4" width="120" alt="VOID logo"/>
+
 <h1>VOID</h1>
 
 <p><strong>WhiteHat School 4기 보안 연구팀</strong></p>
