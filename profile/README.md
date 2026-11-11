@@ -45,7 +45,9 @@ AV/EDR 탐지 우회 기법 구현 모음.
 
 `O` 우회 성공 · `X` 탐지 · `▲` 일부 기능 수행 시 탐지
 
-| 기법 | nProtect | Alyac | V3 | Bitdefender | Avast | Kaspersky | McAfee | Windows Defender |
+> 🔒 백신 제품명은 비공개 레포에서만 확인할 수 있습니다. 열람이 필요한 경우 팀원에게 문의하세요.
+
+| 기법 | AV-1 | AV-2 | AV-3 | AV-4 | AV-5 | AV-6 | AV-7 | AV-8 |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | APC Injection | O | O | O | X | O | X | X | X |
 | Manual PE Mapper | O | O | O | X | O | O | O | O |
@@ -57,7 +59,7 @@ AV/EDR 탐지 우회 기법 구현 모음.
 
 **탐지 결과 — Mimikatz**
 
-| 기법 | nProtect | Alyac | V3 | Bitdefender | Avast | Kaspersky | McAfee | Windows Defender |
+| 기법 | AV-1 | AV-2 | AV-3 | AV-4 | AV-5 | AV-6 | AV-7 | AV-8 |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Process Hollowing | O | O | O | X | O | X | O | O |
 | Manual PE Mapper | O | O | O | O | O | ▲ | O | O |
@@ -90,7 +92,7 @@ AV/EDR 탐지 우회 기법 구현 모음.
 
 ## 테스트 백신
 
-nProtect · ALYac · V3 · Bitdefender · Avast · Kaspersky · McAfee · Windows Defender
+국내외 상용 백신 8종 · 실제 제품명은 비공개 레포에서만 확인할 수 있습니다
 
 ---
 
